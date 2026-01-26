@@ -4,6 +4,7 @@
   </header>
 
   <main>
+    <p class="text-primary text-5xl">测试Test</p>
 
   </main>
 

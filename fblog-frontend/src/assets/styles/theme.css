@@ -1,0 +1,4 @@
+@theme {
+  --font-sans-MaoKenZhuYuanTi: "MaoKenZhuYuanTi", sans-serif;
+  --default-font-family: var(--font-sans-MaoKenZhuYuanTi);
+}
