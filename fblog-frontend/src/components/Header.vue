@@ -1,8 +1,10 @@
 <template>
-  <RouterView />
+  <Nav />
+header
 </template>
 
 <script setup>
+import Nav from '@/components/Nav.vue'
 
 </script>
 

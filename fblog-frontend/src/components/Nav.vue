@@ -1,5 +1,5 @@
 <template>
-  <RouterView />
+nav
 </template>
 
 <script setup>
