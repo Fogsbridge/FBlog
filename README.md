@@ -4,5 +4,5 @@
 
 分为三个部分：
 - [flog-web](https://github.com/Fogsbridge/FBlog/tree/main/fblog-web) 访客前台
-- [flog-admin](https://github.com/Fogsbridge/FBlog/tree/main/fblog-) 管理后台
-- [flog-server](https://github.com/Fogsbridge/FBlog/tree/main/fblog-frontend) 后端接口
+- [flog-admin](https://github.com/Fogsbridge/FBlog/tree/main/fblog-admin) 管理后台
+- [flog-server](https://github.com/Fogsbridge/FBlog/tree/main/fblog-server) 后端接口
