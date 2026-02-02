@@ -3,8 +3,4 @@
 /* 字体配置 */
 @import "./fonts.css";
 
-/* 主题变量 */
-@import "./theme.css";
-@import "./themes/light.css";
-@import "./themes/dark.css";
-
+@import "./custom.css";

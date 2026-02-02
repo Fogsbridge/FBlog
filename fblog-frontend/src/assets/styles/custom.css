@@ -1,0 +1,8 @@
+@import "./themes/light.css";
+@import "./themes/dark.css";
+
+@theme {
+  --font-sans-MaoKenZhuYuanTi: "MaoKenZhuYuanTi", sans-serif;
+  --default-font-family: var(--font-sans-MaoKenZhuYuanTi);
+  --container-8xl: 88rem;
+}
