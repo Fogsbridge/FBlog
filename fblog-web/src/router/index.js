@@ -7,7 +7,10 @@ const routes = [
     children: [
       {
         path: '',
-        component: () => import('@/views/Home/Home.vue'),
+        components: {
+          default: () => import('@/views/Home/Home.vue'),
+          banner: () => import('@/views/Home/HomeBanner.vue')
+        },
         meta: { title: '首页'}
       }
     ]
