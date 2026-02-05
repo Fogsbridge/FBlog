@@ -1,28 +1,26 @@
 <template>
-  <div class="min-h-screen">
+  <div class="min-h-screen bg-base-200">
 
 <!--
   如果有 banner (设想中的绝大部分情况下 banner 都应该是一个含有背景图的组件)，路由记录包含 banner 组件则将导航栏设置 fixed 定位 否则使用 sticky 定位
   如果没有 banner 组件的情况下，不使用 sticky 而使用 fixed 定位会遮盖住后面的内容
 -->
-    <Nav :isFixed="hasBanner" />
+    <LayoutNav :isFixed="hasBanner" />
 
-    <Header>
-      <RouterView name="banner" />
-    </Header>
+    <LayoutHeader />
 
-    <main class="max-w-8xl mx-auto px-7">
+    <main class="max-w-8xl mx-auto p-2 sm:p-4 lg:p-6">
       <RouterView />
     </main>
 
-    <Footer class="max-w-8xl mx-auto px-7" />
+    <LayoutFooter class="max-w-8xl mx-auto p-2 sm:p-4 lg:p-6" />
   </div>
 </template>
 
 <script setup>
-import Nav from '@/views/Layout/LayoutNav.vue'
-import Header from '@/views/Layout/LayoutHeader.vue'
-import Footer from '@/views/Layout/LayoutFooter.vue'
+import LayoutNav from '@/views/Layout/LayoutNav.vue'
+import LayoutHeader from '@/views/Layout/LayoutHeader.vue'
+import LayoutFooter from '@/views/Layout/LayoutFooter.vue'
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
 

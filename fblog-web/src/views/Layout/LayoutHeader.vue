@@ -1,6 +1,6 @@
 <template>
   <header>
-    <slot />
+    <RouterView name="banner" />
   </header>
 </template>
 

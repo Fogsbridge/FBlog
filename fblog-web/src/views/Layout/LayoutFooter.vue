@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="my-10 h-1/2">
+    <div class="my-10 h-1/2 mb-0">
       <h1 class="text-center text-5xl">Footer</h1>
     </div>
   </footer>
