@@ -6,3 +6,5 @@
   --default-font-family: var(--font-sans-MaoKenZhuYuanTi);
   --container-8xl: 88rem;
 }
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
