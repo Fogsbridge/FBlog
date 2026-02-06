@@ -2,6 +2,7 @@
   <nav :class="navClass">
     <div class="max-w-8xl inline-flex grow mx-auto px-7">
 
+      <!-- 左侧 -->
       <div class="navbar-start flex-1 lg:flex-initial">
         <div class="dropdown dropdown-start lg:hidden">
           <div tabindex="0" role="button" class="nav__btn nav__icon-btn">
@@ -10,7 +11,7 @@
             </svg>
           </div>
           <div tabindex="-1" class="dropdown-content">
-            <ul class="menu menu-lg bg-base-300/75 text-base-content backdrop-blur-md text-shadow-sm w-26 mt-5 items-center rounded-box z-100 shadow-2xl ">
+            <ul class="menu menu-lg bg-base-100/75 text-base-content backdrop-blur-md text-shadow-sm w-26 mt-5 items-center rounded-box z-100 shadow-2xl ">
               <li><a>归档</a></li>
               <li><a>分类</a></li>
               <li><a>标签</a></li>
@@ -20,9 +21,10 @@
             </ul>
           </div>
         </div>
-        <a class="nav__btn text-xl!">云桥雾的Blog</a>
+        <RouterLink to="/" class="nav__btn text-xl!">云桥雾的Blog</RouterLink>
       </div>
 
+      <!-- 中间导航区域 -->
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal py-0 gap-3">
           <li>
@@ -79,6 +81,7 @@
       </div>
 
       <!-- TODO 后期用 js 重构一下主题切换的逻辑 -->
+      <!-- 右侧 -->
       <div class="navbar-end lg:flex-initial">
         <div class="dropdown dropdown-end dropdown-hover group/menu-btn">
           <div tabindex="0" role="button" class="nav__btn nav__icon-btn">
@@ -93,7 +96,7 @@
             </svg>
           </div>
           <div tabindex="-1" class="dropdown-content hidden group-hover/menu-btn:block">
-            <ul class="menu menu-md gap-1 w-35 bg-base-300/75 backdrop-blur-md rounded-box z-100 shadow-2xl mt-5">
+            <ul class="menu menu-md gap-1 w-35 bg-base-100/75 backdrop-blur-md rounded-box z-100 shadow-2xl mt-5">
               <li @click="currentTheme = 'default'">
                 <label :class="['nav__theme-option-btn', {'nav__theme-option-btn--active': currentTheme === 'default'}]">
                   <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24">
@@ -168,14 +171,14 @@ const navClass = computed(() => {
     classList.push('fixed')
     if (scrolled.value) {
       // fixed + 已滚动
-      classList.push('bg-base-200/85', 'text-base-content/85', 'shadow-sm', 'border-b-base-content/20', 'navbar--backdrop-blur')
+      classList.push('bg-base-100/95', 'text-base-content', 'shadow-sm', 'border-b-base-content/20', 'navbar--backdrop-blur')
     } else {
       // fixed + 未滚动
       classList.push('bg-transparent', 'border-b-transparent', 'text-neutral-content/90')
     }
   } else {
     // sticky + 未滚动
-    classList.push('sticky', 'bg-base-200/85', 'text-base-content/85', 'shadow-sm', 'shadow-base-content/1', 'border-b-base-content/20')
+    classList.push('sticky', 'bg-base-100/95', 'text-base-content', 'shadow-sm', 'shadow-base-content/1', 'border-b-base-content/20')
     if (scrolled.value) {
       // sticky + 滚动
       classList.push('navbar--backdrop-blur')
@@ -195,7 +198,7 @@ svg {
 
 .nav__btn {
   @apply btn btn-ghost rounded-lg text-inherit font-normal text-shadow-sm text-lg leading-none border-0 h-8 px-2.5
-    active:bg-primary/90
+    active:bg-primary/80
     hover:bg-base-content/10 hover:shadow-sm hover:scale-110 transition duration-200;
 }
 
@@ -214,7 +217,7 @@ svg {
 }
 
 .nav__theme-option-btn--active {
-  @apply bg-primary/90 text-base-300/80 border-base-300/10 shadow-sm;
+  @apply bg-primary/90 text-base-100/80 border-base-100/10 shadow-sm;
 }
 
 /*

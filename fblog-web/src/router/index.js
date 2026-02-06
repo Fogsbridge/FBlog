@@ -12,6 +12,11 @@ const routes = [
           banner: () => import('@/views/Home/HomeBanner.vue')
         },
         meta: { title: '首页'}
+      },
+      {
+        path: ':pathMatch(.*)*',
+        component: () => import('@/views/Errors/NotFound.vue'),
+        meta: { title: '页面迷路了'}
       }
     ]
   }
