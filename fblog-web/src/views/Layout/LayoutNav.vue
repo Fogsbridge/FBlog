@@ -186,7 +186,7 @@ const navClass = computed(() => {
       classList.push('bg-base-100/95', 'text-base-content', 'shadow-sm', 'border-b-base-content/20', 'navbar--backdrop-blur')
     } else {
       // fixed + 未滚动
-      classList.push('bg-transparent', 'border-b-transparent', 'text-white/95')
+      classList.push('bg-transparent', 'border-b-transparent', 'text-white/95', 'dark:text-white/85')
     }
   } else {
     // sticky + 未滚动
