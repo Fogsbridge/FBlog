@@ -8,3 +8,9 @@
 }
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+html {
+  @apply bg-base-100 scrollbar scrollbar-w-2 scrollbar-thumb-violet-500
+  scrollbar-hover:scrollbar-thumb-violet-600 scrollbar-hover:cursor-pointer
+  scrollbar-active:scrollbar-thumb-violet-400;
+}

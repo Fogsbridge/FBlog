@@ -36,7 +36,7 @@ const hasBanner = computed(() => {
 
 #base {
   ::selection {
-    @apply bg-primary/80 text-white
+    @apply bg-primary/80 text-white;
   }
 }
 </style>
