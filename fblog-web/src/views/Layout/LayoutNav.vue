@@ -1,6 +1,6 @@
 <template>
   <nav :class="navClass">
-    <div class="max-w-8xl inline-flex grow mx-auto px-7">
+    <div class="max-w-8xl inline-flex grow mx-auto px-6">
 
       <!-- 左侧 -->
       <div class="navbar-start flex-1 lg:flex-initial">
@@ -190,7 +190,7 @@ const navClass = computed(() => {
     }
   } else {
     // sticky + 未滚动
-    classList.push('sticky', 'bg-base-100/95', 'text-base-content', 'shadow-sm', 'shadow-base-content/1', 'border-b-base-content/20')
+    classList.push('sticky', 'bg-base-100/95', 'text-base-content', 'shadow-sm', 'border-b-base-content/20')
     if (scrolled.value) {
       // sticky + 滚动
       classList.push('navbar--backdrop-blur')

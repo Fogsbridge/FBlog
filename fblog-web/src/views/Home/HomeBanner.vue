@@ -32,7 +32,7 @@ const navHeight = ref(0)
 onMounted(() => navHeight.value = document.getElementsByTagName('nav')[0].offsetHeight)
 const scrollToMain = () => {
   window.scrollTo({
-    top: window.innerHeight - navHeight.value,
+    top: window.innerHeight - navHeight.value, // 要滚动到 main 元素顶部的话，需要减去导航栏高度
     behavior: 'smooth'
   })
 }
