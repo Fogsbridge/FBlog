@@ -10,7 +10,7 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 html {
-  @apply bg-base-100 scrollbar scrollbar-w-2 scrollbar-thumb-violet-500
-  scrollbar-hover:scrollbar-thumb-violet-600 scrollbar-hover:cursor-pointer
-  scrollbar-active:scrollbar-thumb-violet-400;
+  @apply bg-base-100 scrollbar-hover:cursor-pointer scrollbar scrollbar-w-2.5
+    scrollbar-thumb-primary/30 scrollbar-hover:scrollbar-thumb-primary/70
+    dark:scrollbar-thumb-primary/70 dark:scrollbar-hover:scrollbar-thumb-primary
 }
