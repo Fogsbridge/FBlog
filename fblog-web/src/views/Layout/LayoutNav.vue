@@ -229,7 +229,7 @@ svg {
 }
 
 .nav__theme-option-btn--active {
-  @apply bg-primary/90 text-base-100/80 border-base-100/10 shadow-sm;
+  @apply bg-primary text-white border-base-100/10 shadow-sm;
 }
 
 /*
