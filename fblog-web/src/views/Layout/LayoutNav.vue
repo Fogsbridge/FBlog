@@ -209,9 +209,8 @@ svg {
 }
 
 .nav__btn {
-  @apply btn btn-ghost rounded-lg text-inherit font-bold text-shadow-sm text-lg leading-none border-0 h-8 px-2.5 transition-[scale] duration-200
-    hover:bg-base-content/10 hover:shadow-sm hover:scale-110
-    active:bg-primary active:text-base-100/90;
+  @apply btn btn-ghost rounded-full text-inherit font-bold text-shadow-sm text-lg leading-none border-0 h-8 px-2.5 transition-[scale] duration-200
+    hover:bg-primary hover:text-base-100 dark:hover:text-base-content hover:shadow-sm hover:scale-110
 }
 
 .nav__icon-btn {
@@ -229,7 +228,7 @@ svg {
 }
 
 .nav__theme-option-btn--active {
-  @apply bg-primary/90 text-base-100/80 border-base-100/10 shadow-sm;
+  @apply bg-primary text-white border-base-100/10 shadow-sm;
 }
 
 /*

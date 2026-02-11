@@ -6,7 +6,7 @@
     <div class="min-h-screen h-full flex flex-col items-center">
       <div class="h-full flex flex-col justify-center items-center select-none text-white/95 dark:text-white/85 text-shadow-black/50 text-shadow-lg transition-all duration-500">
         <img src="/images/avatar-1.jpg" alt="avatar" class="z-10 size-28 mb-8 rounded-full ring-base-100/20 ring-6 opacity-90 shadow-black/80 shadow-2xl" />
-        <span class="z-10 text-3xl md:text-4xl lg:text-5xl mb-6">云桥雾的Blog</span>
+        <span class="z-10 text-3xl md:text-4xl lg:text-5xl mb-6 font-bold">云桥雾的Blog</span>
         <div class="z-10">
           <span class="h-5 md:h-6 lg:h-7.5 text-xl md:text-2xl lg:text-3xl leading-none mb-10 block px-10">
             {{ displayText }}
@@ -15,7 +15,7 @@
         </div>
       </div>
 
-      <div class="z-10 p-2 mb-6 animate-bounce" @click="scrollToMain">
+      <div class="z-10 p-2 mb-6 animate-bounce cursor-pointer" @click="scrollToMain">
         <svg class="size-10 fill-white/90 stroke-white/60 stroke-1 drop-shadow-xl drop-shadow-black/50" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path clip-rule="evenodd" fill-rule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"></path>
         </svg>
