@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-[url('/images/home-full-screen-2.jpg')] bg-center bg-cover">
+  <div class="min-h-screen bg-[url('/images/banner/home-full-screen-2.jpg')] bg-center bg-cover">
     <!-- 点阵遮罩 -->
     <div class="absolute inset-0 dot-mask backdrop-brightness-80 dark:backdrop-brightness-70 transition duration-500" ></div>
 
@@ -10,7 +10,7 @@
         <div class="z-10">
           <span class="h-5 md:h-6 lg:h-7.5 text-xl md:text-2xl lg:text-3xl leading-none mb-10 block px-10">
             {{ displayText }}
-            <span class="h-5 md:h-6 lg:h-7.5 absolute ml-1 w-1 rounded-full bg-white/90 dark:bg-white/90 animate-blink"></span>
+            <span class="h-5 md:h-6 lg:h-7.5 absolute ml-1 w-0.5  bg-blue-400 animate-blink"></span>
           </span>
         </div>
       </div>
@@ -45,10 +45,10 @@ const titleArr = ref([
 ])
 
 // 打字机动画参数
-const TYPING_DELAY = 150 // 输入下一个字的延迟时间
-const DELETING_DELAY = 80 // 删除下一个字的延迟时间
-const PRE_DELETE_DELAY = 1500 // 输入完成后，准备删除前的停顿时间
-const PRE_NEXT_TEXT_DELAY = 2500 // 开始执行下一段文本前的停顿时间
+const TYPING_DELAY = 100 // 输入下一个字的延迟时间
+const DELETING_DELAY = 60 // 删除下一个字的延迟时间
+const PRE_DELETE_DELAY = 2500 // 输入完成后，准备删除前的停顿时间
+const PRE_NEXT_TEXT_DELAY = 1000 // 开始执行下一段文本前的停顿时间
 
 const displayText = ref('')
 let titleIndex = 0

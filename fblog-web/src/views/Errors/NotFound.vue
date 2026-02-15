@@ -1,9 +1,9 @@
 <template>
-  <div class="min-h-fit bg-base-100 rounded-box border border-base-content/15 shadow-xl shadow-neutral/5 overflow-hidden">
-    <div class="flex flex-col lg:flex-row">
+  <div class="min-h-fit py-6">
+    <div class="flex flex-col lg:flex-row bg-base-100 rounded-box border border-base-content/15 shadow-xl shadow-neutral/5 overflow-hidden">
       <!-- 左侧 -->
       <div class="relative w-full lg:w-1/2 h-auto bg-center bg-cover bg-no-repeat"
-           style="background-image: url('/images/m-home-full-screen-1.jpg');">
+           style="background-image: url('/images/banner/m-home-full-screen-1.jpg');">
         <div class="absolute inset-0 bg-linear-to-br from-primary/40 via-primary/20 to-transparent"></div>
 
         <div class="relative h-full flex flex-col items-center justify-center text-center text-white/95 p-4 sm:p-6 md:p-8">

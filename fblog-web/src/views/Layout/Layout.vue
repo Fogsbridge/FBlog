@@ -1,5 +1,5 @@
 <template>
-  <div id="base" class="min-h-screen bg-base-200">
+  <div class="min-h-screen bg-base-200">
 
 <!--
   如果有 banner (设想中的绝大部分情况下 banner 都应该是一个含有背景图的组件)，路由记录包含 banner 组件则将导航栏设置 fixed 定位 否则使用 sticky 定位
@@ -9,7 +9,7 @@
 
     <LayoutHeader />
 
-    <main class="max-w-8xl mx-auto p-2 sm:p-4 lg:p-6 min-h-3/5">
+    <main class="max-w-8xl mx-auto px-2 sm:px-4 lg:px-6 min-h-3/5">
       <RouterView />
     </main>
 
@@ -32,11 +32,5 @@ const hasBanner = computed(() => {
 </script>
 
 <style scoped>
-@reference "@/assets/styles/index.css";
 
-#base {
-  ::selection {
-    @apply bg-primary/80 text-white;
-  }
-}
 </style>
