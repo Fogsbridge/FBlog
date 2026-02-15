@@ -70,12 +70,12 @@
             </a>
           </li>
           <li>
-            <a class="nav__btn">
+            <RouterLink to="/about" class="nav__btn">
               <svg data-slot="icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path clip-rule="evenodd" fill-rule="evenodd" d="M4.5 3.75a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V6.75a3 3 0 0 0-3-3h-15Zm4.125 3a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Zm-3.873 8.703a4.126 4.126 0 0 1 7.746 0 .75.75 0 0 1-.351.92 7.47 7.47 0 0 1-3.522.877 7.47 7.47 0 0 1-3.522-.877.75.75 0 0 1-.351-.92ZM15 8.25a.75.75 0 0 0 0 1.5h3.75a.75.75 0 0 0 0-1.5H15ZM14.25 12a.75.75 0 0 1 .75-.75h3.75a.75.75 0 0 1 0 1.5H15a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5h3.75a.75.75 0 0 0 0-1.5H15Z"></path>
               </svg>
               <span>关于我</span>
-            </a>
+            </RouterLink>
           </li>
         </ul>
       </div>
@@ -151,14 +151,15 @@ const toggleTheme = (theme) => {
   localStorage.setItem('theme', theme)
   currentTheme.value = theme
 
+  // 导航栏主题图标切换时的过渡动画逻辑
   themes.forEach(themeName => {
-    const element = document.getElementById(themeName)
+    const themeIcon = document.getElementById(themeName)
     const isActive = themeName === theme
 
-    element.classList.toggle('opacity-100', isActive)
-    element.classList.toggle('rotate-0', isActive)
-    element.classList.toggle('opacity-0', !isActive)
-    element.classList.toggle('rotate-180', !isActive)
+    themeIcon.classList.toggle('opacity-100', isActive)
+    themeIcon.classList.toggle('rotate-0', isActive)
+    themeIcon.classList.toggle('opacity-0', !isActive)
+    themeIcon.classList.toggle('rotate-180', !isActive)
   })
 }
 
@@ -183,14 +184,14 @@ const navClass = computed(() => {
     classList.push('fixed')
     if (scrolled.value) {
       // fixed + 已滚动
-      classList.push('bg-base-100/95', 'text-base-content', 'shadow-sm', 'border-b-base-content/20', 'navbar--backdrop-blur')
+      classList.push('bg-base-100/95', 'text-base-content', 'shadow-2xs', 'border-b-base-content/20', 'navbar--backdrop-blur')
     } else {
       // fixed + 未滚动
       classList.push('bg-transparent', 'border-b-transparent', 'text-white/95', 'dark:text-white/85')
     }
   } else {
     // sticky + 未滚动
-    classList.push('sticky', 'bg-base-100/95', 'text-base-content', 'shadow-sm', 'border-b-base-content/20')
+    classList.push('sticky', 'bg-base-100/95', 'text-base-content', 'shadow-2xs', 'border-b-base-content/20')
     if (scrolled.value) {
       // sticky + 滚动
       classList.push('navbar--backdrop-blur')

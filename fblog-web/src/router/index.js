@@ -14,6 +14,11 @@ const routes = [
         meta: { title: '首页'}
       },
       {
+        path: '/about',
+        component: () => import('@/views/About/About.vue'),
+        meta: { title: '关于我'}
+      },
+      {
         path: ':pathMatch(.*)*',
         component: () => import('@/views/Errors/NotFound.vue'),
         meta: { title: '页面迷路了'}
