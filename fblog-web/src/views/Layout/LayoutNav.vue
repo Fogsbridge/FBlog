@@ -21,7 +21,11 @@
             </ul>
           </div>
         </div>
-        <RouterLink to="/" :class="[navBtnClass, 'text-xl!']">云桥雾的Blog</RouterLink>
+        <RouterLink to="/" :class="[navBtnClass, 'text-xl!']">
+          <div>
+            云桥雾的<Typewriter :text="['Blog', '博客']" cursorClass="bg-current pl-0.5 ml-0.5" typingDelay="300" preDeleteDelay="5000" preNextTextDelay="200" />
+          </div>
+        </RouterLink>
       </div>
 
       <!-- 中间导航区域 -->
@@ -131,6 +135,7 @@
 <script setup>
 import { computed, onMounted, ref, toRefs, watch } from 'vue'
 import { useEventListener, usePreferredColorScheme } from '@vueuse/core'
+import Typewriter from '@/components/base/Typewriter.vue'
 
 // 主题切换逻辑
 const themes = ['system', 'light', 'dark']
