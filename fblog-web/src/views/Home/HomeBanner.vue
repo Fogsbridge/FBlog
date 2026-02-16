@@ -7,12 +7,8 @@
       <div class="h-full flex flex-col justify-center items-center select-none text-white/95 dark:text-white/85 text-shadow-black/50 text-shadow-lg transition-all duration-500">
         <img src="/images/avatar-1.jpg" alt="avatar" class="z-10 size-28 mb-8 rounded-full ring-base-100/20 ring-6 opacity-90 shadow-black/80 shadow-2xl" />
         <span class="z-10 text-3xl md:text-4xl lg:text-5xl mb-6 font-bold">云桥雾的Blog</span>
-        <div class="z-10">
-          <Typewriter :text="titleArr" class="h-5 md:h-6 lg:h-7.5 text-xl md:text-2xl lg:text-3xl leading-none mb-10 block px-10">
-            <template #textCursor>
-              <span class="h-5 md:h-6 lg:h-7.5 absolute ml-1 w-0.5  bg-blue-400 animate-blink"></span>
-            </template>
-          </Typewriter>
+        <div class="z-10 h-5 md:h-6 lg:h-7.5 text-xl md:text-2xl lg:text-3xl mb-10">
+          <Typewriter :text="titleArr" cursorClass="bg-blue-400 pl-0.5 ml-0.5" deletingDelay="40" preDeleteDelay="4000" preNextTextDelay="500" />
         </div>
       </div>
 

@@ -1,9 +1,7 @@
 <template>
-  <span class="relative">
+  <span>
     {{ displayText }}
-    <slot name="textCursor"> <!-- 光标插槽 -->
-      <span class="h-5 absolute ml-1 w-0.5  bg-black animate-blink"></span>
-    </slot>
+    <span class="animate-blink" :class="cursorClass"></span>
   </span>
 </template>
 
@@ -11,24 +9,27 @@
 import { ref, toRefs, onMounted } from 'vue'
 
 const props = defineProps({
-  text: {
-    type: [String, Array]
-  },
-  config: {
-    type: Object,
-    default: () => ({
-      // 打字机动画参数
-      typingDelay: 100, // 输入下一个字的延迟时间
-      deletingDelay: 60, // 删除下一个字的延迟时间
-      preDeleteDelay: 2500, // 输入完成后，准备删除前的停顿时间
-      preNextTextDelay: 1000 // 开始执行下一段文本前的停顿时间
-    })
-  }
+  text: { type: [String, Array], required: true},
+  // 打字机动画参数
+  typingDelay: { type: String, default: '100' }, // 输入下一个字的延迟时间
+  deletingDelay: { type: String, default: '60' }, // 删除下一个字的延迟时间
+  preDeleteDelay: { type: String, default: '2500' }, // 输入完成后，准备删除前的停顿时间
+  preNextTextDelay: { type: String, default: '1000' }, // 开始执行下一段文本前的停顿时间
+  cursorClass: { type: String, default: 'pl-0.5 ml-0 bg-current' }, // 光标样式
+  blinkTime: { type: String, default: '1300ms' } // 光标闪烁时间
 })
 
-const { text, config } = toRefs(props)
-const textArr = ref(typeof text.value === 'string' ? [text.value] : text.value)
+const {
+  text,
+  typingDelay,
+  deletingDelay,
+  preDeleteDelay,
+  preNextTextDelay,
+  cursorClass,
+  blinkTime
+} = toRefs(props)
 
+const textArr = ref(typeof text.value === 'string' ? [text.value] : text.value)
 const displayText = ref('')
 let titleIndex = 0
 let isTyping = true
@@ -39,20 +40,20 @@ const typewriter = () => {
     // 输入
     if (displayText.value.length < currentText.length) {
       displayText.value = currentText.substring(0, displayText.value.length + 1)
-      setTimeout(typewriter, config.value.typingDelay)
+      setTimeout(typewriter, typingDelay.value)
     } else {
       isTyping = false
-      setTimeout(typewriter, config.value.preDeleteDelay)
+      setTimeout(typewriter, preDeleteDelay.value)
     }
   } else {
     // 删除
     if (displayText.value.length > 0) {
       displayText.value = displayText.value.substring(0, displayText.value.length - 1)
-      setTimeout(typewriter, config.value.deletingDelay)
+      setTimeout(typewriter, deletingDelay.value)
     } else {
       isTyping = true
       titleIndex = (titleIndex + 1) % textArr.value.length
-      setTimeout(typewriter, config.value.preNextTextDelay)
+      setTimeout(typewriter, preNextTextDelay.value)
     }
   }
 }
@@ -65,7 +66,7 @@ onMounted(() => {
 <style scoped>
 /* 光标闪烁动画 */
 .animate-blink {
-  animation: blink 1.3s step-end infinite;
+  animation: blink v-bind(blinkTime) step-end infinite;
 }
 
 @keyframes blink {
