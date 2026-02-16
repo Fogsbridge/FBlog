@@ -7,11 +7,8 @@
       <div class="h-full flex flex-col justify-center items-center select-none text-white/95 dark:text-white/85 text-shadow-black/50 text-shadow-lg transition-all duration-500">
         <img src="/images/avatar-1.jpg" alt="avatar" class="z-10 size-28 mb-8 rounded-full ring-base-100/20 ring-6 opacity-90 shadow-black/80 shadow-2xl" />
         <span class="z-10 text-3xl md:text-4xl lg:text-5xl mb-6 font-bold">云桥雾的Blog</span>
-        <div class="z-10">
-          <span class="h-5 md:h-6 lg:h-7.5 text-xl md:text-2xl lg:text-3xl leading-none mb-10 block px-10">
-            {{ displayText }}
-            <span class="h-5 md:h-6 lg:h-7.5 absolute ml-1 w-0.5  bg-blue-400 animate-blink"></span>
-          </span>
+        <div class="z-10 h-5 md:h-6 lg:h-7.5 text-xl md:text-2xl lg:text-3xl mb-10">
+          <Typewriter :text="titleArr" cursorClass="bg-blue-400 pl-0.5 ml-0.5" deletingDelay="40" preDeleteDelay="4000" preNextTextDelay="500" />
         </div>
       </div>
 
@@ -25,6 +22,7 @@
 </template>
 
 <script setup>
+import Typewriter from '@/components/base/Typewriter.vue'
 import { onMounted, ref } from 'vue'
 
 // 滚动到 main
@@ -43,44 +41,6 @@ const titleArr = ref([
   'title标题3',
   'title标题4',
 ])
-
-// 打字机动画参数
-const TYPING_DELAY = 100 // 输入下一个字的延迟时间
-const DELETING_DELAY = 60 // 删除下一个字的延迟时间
-const PRE_DELETE_DELAY = 2500 // 输入完成后，准备删除前的停顿时间
-const PRE_NEXT_TEXT_DELAY = 1000 // 开始执行下一段文本前的停顿时间
-
-const displayText = ref('')
-let titleIndex = 0
-let isTyping = true
-
-const typewriter = () => {
-  const currentText = titleArr.value[titleIndex]
-  if (isTyping) {
-    // 输入
-    if (displayText.value.length < currentText.length) {
-      displayText.value = currentText.substring(0, displayText.value.length + 1)
-      setTimeout(typewriter, TYPING_DELAY)
-    } else {
-      isTyping = false
-      setTimeout(typewriter, PRE_DELETE_DELAY)
-    }
-  } else {
-    // 删除
-    if (displayText.value.length > 0) {
-      displayText.value = displayText.value.substring(0, displayText.value.length - 1)
-      setTimeout(typewriter, DELETING_DELAY)
-    } else {
-      isTyping = true
-      titleIndex = (titleIndex + 1) % titleArr.value.length
-      setTimeout(typewriter, PRE_NEXT_TEXT_DELAY)
-    }
-  }
-}
-
-onMounted(() => {
-  typewriter()
-})
 </script>
 
 <style >
@@ -101,20 +61,6 @@ onMounted(() => {
   }
   100% {
     background-position: 200px 200px;
-  }
-}
-
-/* 光标闪烁动画 */
-.animate-blink {
-  animation: blink 1.3s step-end infinite;
-}
-
-@keyframes blink {
-  0%, 50% {
-    opacity: 1;
-  }
-  51%, 100% {
-    opacity: 0;
   }
 }
 </style>

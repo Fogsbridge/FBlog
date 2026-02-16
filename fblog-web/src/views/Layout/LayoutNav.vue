@@ -5,7 +5,7 @@
       <!-- 左侧 -->
       <div class="navbar-start flex-1 lg:flex-initial">
         <div class="dropdown dropdown-start lg:hidden">
-          <div tabindex="0" role="button" class="nav__btn nav__icon-btn">
+          <div tabindex="0" role="button" :class="[navBtnClass, 'nav__icon-btn']">
             <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 0 1 2.75 4h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 4.75Zm0 10.5a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75ZM2 10a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 2 10Z"></path>
             </svg>
@@ -21,14 +21,18 @@
             </ul>
           </div>
         </div>
-        <RouterLink to="/" class="nav__btn text-xl!">云桥雾的Blog</RouterLink>
+        <RouterLink to="/" :class="[navBtnClass, 'text-xl!']">
+          <div>
+            云桥雾的<Typewriter :text="['Blog', '博客']" cursorClass="bg-current pl-0.5 ml-0.5" typingDelay="300" preDeleteDelay="5000" preNextTextDelay="200" />
+          </div>
+        </RouterLink>
       </div>
 
       <!-- 中间导航区域 -->
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal py-0 gap-3">
           <li>
-            <a class="nav__btn">
+            <a :class="navBtnClass">
               <svg data-slot="icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M3.375 3C2.339 3 1.5 3.84 1.5 4.875v.75c0 1.036.84 1.875 1.875 1.875h17.25c1.035 0 1.875-.84 1.875-1.875v-.75C22.5 3.839 21.66 3 20.625 3H3.375Z"></path>
                 <path clip-rule="evenodd" fill-rule="evenodd" d="m3.087 9 .54 9.176A3 3 0 0 0 6.62 21h10.757a3 3 0 0 0 2.995-2.824L20.913 9H3.087Zm6.163 3.75A.75.75 0 0 1 10 12h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1-.75-.75Z"></path>
@@ -37,7 +41,7 @@
             </a>
           </li>
           <li>
-            <a class="nav__btn">
+            <a :class="navBtnClass">
               <svg data-slot="icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M5.566 4.657A4.505 4.505 0 0 1 6.75 4.5h10.5c.41 0 .806.055 1.183.157A3 3 0 0 0 15.75 3h-7.5a3 3 0 0 0-2.684 1.657ZM2.25 12a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3v-6ZM5.25 7.5c-.41 0-.806.055-1.184.157A3 3 0 0 1 6.75 6h10.5a3 3 0 0 1 2.683 1.657A4.505 4.505 0 0 0 18.75 7.5H5.25Z"></path>
               </svg>
@@ -45,7 +49,7 @@
             </a>
           </li>
           <li>
-            <a class="nav__btn">
+            <a :class="navBtnClass">
               <svg data-slot="icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path clip-rule="evenodd" fill-rule="evenodd" d="M5.25 2.25a3 3 0 0 0-3 3v4.318a3 3 0 0 0 .879 2.121l9.58 9.581c.92.92 2.39 1.186 3.548.428a18.849 18.849 0 0 0 5.441-5.44c.758-1.16.492-2.629-.428-3.548l-9.58-9.581a3 3 0 0 0-2.122-.879H5.25ZM6.375 7.5a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z"></path>
               </svg>
@@ -53,7 +57,7 @@
             </a>
           </li>
           <li>
-            <a class="nav__btn">
+            <a :class="navBtnClass">
               <svg data-slot="icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path clip-rule="evenodd" fill-rule="evenodd" d="M4.125 3C3.089 3 2.25 3.84 2.25 4.875V18a3 3 0 0 0 3 3h15a3 3 0 0 1-3-3V4.875C17.25 3.839 16.41 3 15.375 3H4.125ZM12 9.75a.75.75 0 0 0 0 1.5h1.5a.75.75 0 0 0 0-1.5H12Zm-.75-2.25a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5H12a.75.75 0 0 1-.75-.75ZM6 12.75a.75.75 0 0 0 0 1.5h7.5a.75.75 0 0 0 0-1.5H6Zm-.75 3.75a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5H6a.75.75 0 0 1-.75-.75ZM6 6.75a.75.75 0 0 0-.75.75v3c0 .414.336.75.75.75h3a.75.75 0 0 0 .75-.75v-3A.75.75 0 0 0 9 6.75H6Z"></path>
                 <path d="M18.75 6.75h1.875c.621 0 1.125.504 1.125 1.125V18a1.5 1.5 0 0 1-3 0V6.75Z"></path>
@@ -62,7 +66,7 @@
             </a>
           </li>
           <li>
-            <a class="nav__btn flex flex-row">
+            <a :class="navBtnClass">
               <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"></path>
               </svg>
@@ -70,7 +74,7 @@
             </a>
           </li>
           <li>
-            <RouterLink to="/about" class="nav__btn">
+            <RouterLink to="/about" :class="navBtnClass">
               <svg data-slot="icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path clip-rule="evenodd" fill-rule="evenodd" d="M4.5 3.75a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V6.75a3 3 0 0 0-3-3h-15Zm4.125 3a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Zm-3.873 8.703a4.126 4.126 0 0 1 7.746 0 .75.75 0 0 1-.351.92 7.47 7.47 0 0 1-3.522.877 7.47 7.47 0 0 1-3.522-.877.75.75 0 0 1-.351-.92ZM15 8.25a.75.75 0 0 0 0 1.5h3.75a.75.75 0 0 0 0-1.5H15ZM14.25 12a.75.75 0 0 1 .75-.75h3.75a.75.75 0 0 1 0 1.5H15a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5h3.75a.75.75 0 0 0 0-1.5H15Z"></path>
               </svg>
@@ -83,7 +87,7 @@
       <!-- 右侧 -->
       <div class="navbar-end lg:flex-initial">
         <div class="dropdown dropdown-end dropdown-hover group/menu-btn">
-          <div tabindex="0" role="button" class="nav__btn nav__icon-btn" @click="toggleTheme()">
+          <div tabindex="0" role="button" :class="[navBtnClass, 'nav__icon-btn']" @click="toggleTheme()">
             <svg id="system" class="absolute rotate-180 opacity-0 transition-[opacity,rotate] duration-700 ease-in-out" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24">
               <path fill="currentColor" d="M12 17V7Q9.925 7 8.463 8.463T7 12t1.463 3.538T12 17m0 5q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m0-2q3.35 0 5.675-2.325T20 12t-2.325-5.675T12 4T6.325 6.325T4 12t2.325 5.675T12 20m0-8"></path>
             </svg>
@@ -131,6 +135,7 @@
 <script setup>
 import { computed, onMounted, ref, toRefs, watch } from 'vue'
 import { useEventListener, usePreferredColorScheme } from '@vueuse/core'
+import Typewriter from '@/components/base/Typewriter.vue'
 
 // 主题切换逻辑
 const themes = ['system', 'light', 'dark']
@@ -163,7 +168,6 @@ const toggleTheme = (theme) => {
   })
 }
 
-// 计算导航栏样式
 const props = defineProps({
   isFixed: Boolean
 })
@@ -175,6 +179,7 @@ useEventListener(window, 'scroll', () => {
   scrolled.value = window.scrollY > 0
 })
 
+// 计算导航栏样式
 // 通过 isFixed 判断是否使用 fixed 定位，否则使用 sticky
 // 通过 scrolled 判断是否产生了滚动，在有 banner 且没有产生滚动时的情况下背景应该是透明的，否则是是毛玻璃背景
 const navClass = computed(() => {
@@ -184,18 +189,36 @@ const navClass = computed(() => {
     classList.push('fixed')
     if (scrolled.value) {
       // fixed + 已滚动
-      classList.push('bg-base-100/95', 'text-base-content', 'shadow-2xs', 'border-b-base-content/20', 'navbar--backdrop-blur')
+      classList.push('bg-base-100/95', 'shadow-2xs', 'border-b-base-content/20', 'navbar--backdrop-blur')
     } else {
       // fixed + 未滚动
-      classList.push('bg-transparent', 'border-b-transparent', 'text-white/95', 'dark:text-white/85')
+      classList.push('bg-transparent', 'border-b-transparent')
     }
   } else {
     // sticky + 未滚动
-    classList.push('sticky', 'bg-base-100/95', 'text-base-content', 'shadow-2xs', 'border-b-base-content/20')
+    classList.push('sticky', 'bg-base-100/95', 'shadow-2xs', 'border-b-base-content/20')
     if (scrolled.value) {
       // sticky + 滚动
       classList.push('navbar--backdrop-blur')
     }
+  }
+
+  return classList
+})
+
+// 计算导航栏按钮样式
+const navBtnClass = computed(() => {
+  const classList = [
+    'btn', 'btn-ghost', 'rounded-full', 'font-bold', 'text-shadow-sm', 'text-lg', 'leading-none', 'border-0', 'h-8', 'px-2.5', 'transition-[scale]', 'duration-200',
+    'hover:shadow-none', 'hover:scale-110'
+  ]
+
+  if (isFixed.value && !scrolled.value) {
+    // fixed + 未滚动
+    classList.push('text-white/95', 'dark:text-white/90', 'hover:bg-black/20')
+  } else {
+    // fixed + 已滚动 和 sticky + 已滚动/未滚动
+    classList.push('text-base-content', 'hover:bg-base-content', 'hover:text-base-100')
   }
 
   return classList
@@ -207,11 +230,6 @@ const navClass = computed(() => {
 
 svg {
   @apply fill-current stroke-current size-5 stroke-0 drop-shadow-xs drop-shadow-neutral/10;
-}
-
-.nav__btn {
-  @apply btn btn-ghost rounded-full text-inherit font-bold text-shadow-sm text-lg leading-none border-0 h-8 px-2.5 transition-[scale] duration-200
-    hover:bg-primary hover:text-base-100 dark:hover:text-base-content hover:shadow-sm hover:scale-110
 }
 
 .nav__icon-btn {
