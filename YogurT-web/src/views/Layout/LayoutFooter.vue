@@ -73,8 +73,8 @@
           </span>
           <span class="hidden lg:block">·</span>
           <span>Powered by
-            <a href="https://github.com/Fogsbridge/FBlog" target="_blank" class="link link-secondary no-underline">
-              FBlog
+            <a href="https://github.com/Fogsbridge/YogurT" target="_blank" class="link link-secondary no-underline">
+              YogurT
             </a>
           </span>
         </div>
