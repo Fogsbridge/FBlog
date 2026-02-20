@@ -15,7 +15,10 @@ const routes = [
       },
       {
         path: '/about',
-        component: () => import('@/views/About/About.vue'),
+        components: {
+          default: () => import('@/views/About/About.vue'),
+          banner: () => import('@/views/About/AboutBanner.vue')
+        },
         meta: { title: '关于我'}
       },
       {
